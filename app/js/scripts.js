@@ -1,17 +1,37 @@
-// var mapClicker = document.querySelector(".map");
-// var body = document.querySelector("body"); // NEW
+// var body = document.querySelector("body");
+// document.addEventListener("click", handleClicks);
 
-// mapClicker.addEventListener("click", show);
+// function handleClicks(e) {
+//   if (e.target.matches(".map")) {
+//     body.classList.add("showme");
+//     e.preventDefault();
+//   }
+//   if (e.target.matches(".closer")) {
+//     body.classList.remove("showme");
+//     e.preventDefault();
+//   }
+// }
+// }
+// var body = document.querySelector("body");
+// document.addEventListener("click", handleClicks);
 
-// function show(e) {
-//   body.classList.toggle("showme"); // NEW
-//   e.preventDefault();
+// function handleClicks(e) {
+//   if (e.target.matches(".map")) {
+//     body.classList.add("showme");
+//     e.preventDefault();
+//   } else {
+//     body.classList.remove("showme");
+//   }
 // }
 
-document.addEventListener("click", show);
+var body = document.querySelector("body");
+document.addEventListener("click", handleClicks);
 
-function show(e) {
-  console.log(e.target);
-  // 'event.target' is the clicked element
-  e.preventDefault();
+function handleClicks(e) {
+  if (e.target.matches(".map") || e.target.matches(".closer")) {
+    body.classList.toggle("showme");
+    e.preventDefault();
+  } else {
+    body.classList.remove("showme");
+  }
 }
